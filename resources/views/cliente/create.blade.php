@@ -1,8 +1,8 @@
 <x-app-layout>
 
-    <h5>Nova Categoria</h5>
+    <h5>Novo Cliente</h5>
 
-    <form action="/categoria" method="POST">
+    <form action="/cliente" method="POST">
         @CSRF
         <div class="row">
             <div class="col">

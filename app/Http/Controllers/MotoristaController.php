@@ -13,7 +13,7 @@ class MotoristaController extends Controller
     public function index()
     {
         $motorista = Motorista::all();
-        return view("motorista.index", compact('motorista'));
+        return view("motorista.index", compact('motoristas'));
     }
 
     /**
@@ -21,7 +21,7 @@ class MotoristaController extends Controller
      */
     public function create()
     {
-        return view("motorist.create");
+        return view("motorista.create");
     }
 
     /**

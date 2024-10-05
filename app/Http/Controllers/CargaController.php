@@ -13,7 +13,7 @@ class CargaController extends Controller
     public function index()
     {
         $carga = Carga::all();
-        return view("carga.index", compact('carga'));
+        return view("carga.index", compact('cargas'));
     }
 
     /**
@@ -21,7 +21,7 @@ class CargaController extends Controller
      */
     public function create()
     {
-        return view("categoria.create");
+        return view("carga.create");
     }
 
     /**
