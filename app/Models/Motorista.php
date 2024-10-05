@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Motorista extends Model
 {
-    use HasFactory;
+    protected $fillable = ['nome']; //só o que for manipulável
 }
