@@ -6,8 +6,8 @@
         @CSRF
         <div class="row">
             <div class="col">
-                <label for="nome" class="form-label">Informe a carga:</label>
-                <input type="text" name="nome" class="form-control"/>
+                <label for="nomeCarga" class="form-label">Informe a carga:</label>
+                <input type="text" name="nomeCarga" class="form-control"/>
             </div>
         </div>
         <div class="row">
@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col">
                 <label for="tamanho" class="form-label">Informe o tamanho:</label>
-                <input type="text" name="nome" class="form-control"/>
+                <input type="text" name="tamanho" class="form-control"/>
             </div>
         </div>
         <div class="row">

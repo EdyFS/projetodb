@@ -6,8 +6,8 @@
         @CSRF
         <div class="row">
             <div class="col">
-                <label for="nome" class="form-label">Informe o nome:</label>
-                <input type="text" name="nome" class="form-control"/>
+                <label for="nome_cliente" class="form-label">Informe o nome:</label>
+                <input type="text" name="nome_cliente" class="form-control"/>
             </div>
         </div>
         <div class="row">
