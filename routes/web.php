@@ -1,7 +1,12 @@
 <?php
 
+use App\Http\Controllers\CargaController;
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\MotoristaController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Motorista;
+use App\Models\Cliente;
+use App\Models\Carga;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {

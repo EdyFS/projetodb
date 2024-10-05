@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Carga extends Model
 {
-    protected $fillable = ['nome']; //só o que for manipulável
+    protected $fillable = ['nome','peso','tamanho','fragilidade']; //só o que for manipulável
+
 }

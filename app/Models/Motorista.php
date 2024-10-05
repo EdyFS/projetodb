@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Motorista extends Model
 {
-    protected $fillable = ['nome']; //só o que for manipulável
+    protected $fillable = ['nome','cpf','telefone','email','cidade']; //só o que for manipulável
+    /*protected $fillable = ['cpf'];
+    protected $fillable = ['telefone'];
+    protected $fillable = ['email'];
+    protected $fillable = ['cidade'];*/
 }
