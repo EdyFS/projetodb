@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('motoristas', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('nomeMotorista', 255);
+            $table->string('nome_motorista', 255);
             $table->int('cpf', 11);
             $table->string('telefone', 255);
             $table->string('email', 255);

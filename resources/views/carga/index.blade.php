@@ -19,7 +19,7 @@
         <tbody>
             @foreach($carga as $c)
             <tr>
-                <td>{{ $c->nome }}</td>
+                <td>{{ $c->nomeCarga }}</td>
                 <td>{{ $c->peso }}</td>
                 <td>{{ $c->tamanho }}</td>
                 <td>{{ $c->fragilidade }}</td>
