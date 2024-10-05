@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Carga;
 
 class CargaController extends Controller
 {
@@ -11,7 +12,8 @@ class CargaController extends Controller
      */
     public function index()
     {
-        //
+        $carga = Carga::all();
+        return view("carga.index", compact('carga'));
     }
 
     /**
@@ -19,7 +21,7 @@ class CargaController extends Controller
      */
     public function create()
     {
-        //
+        return view("categoria.create");
     }
 
     /**
@@ -27,7 +29,8 @@ class CargaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Carga::create($request->all());
+        return redirect("/carga");
     }
 
     /**

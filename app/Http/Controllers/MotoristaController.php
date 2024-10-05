@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Motorista;
 
 class MotoristaController extends Controller
 {
@@ -11,7 +12,8 @@ class MotoristaController extends Controller
      */
     public function index()
     {
-        //
+        $motorista = Motorista::all();
+        return view("motorista.index", compact('motorista'));
     }
 
     /**
@@ -19,7 +21,7 @@ class MotoristaController extends Controller
      */
     public function create()
     {
-        //
+        return view("motorist.create");
     }
 
     /**
@@ -27,7 +29,8 @@ class MotoristaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Motorista::create($request->all());
+        return redirect("/motorista");
     }
 
     /**
