@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('cargas', function (Blueprint $table) {
             $table->id();
+            $table->timestamps();
             $table->string('nomeCarga', 255);
             $table->string('peso', 255);
             $table->string('tamanho', 255);
             $table->string('fragilidade', 255);
-            $table->timestamps();
         });
     }
 
