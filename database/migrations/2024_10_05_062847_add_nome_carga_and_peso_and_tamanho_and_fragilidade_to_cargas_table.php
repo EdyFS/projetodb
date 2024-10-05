@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cargas', function (Blueprint $table) {
-            $table->id();
+        Schema::table('cargas', function (Blueprint $table) {
             $table->string('nomeCarga', 255);
             $table->string('peso', 255);
             $table->string('tamanho', 255);
             $table->string('fragilidade', 255);
-            $table->timestamps();
         });
     }
 
@@ -26,6 +24,11 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cargas');
+        Schema::table('cargas', function (Blueprint $table) {
+            $table->string('nomeCarga', 255);
+            $table->string('peso', 255);
+            $table->string('tamanho', 255);
+            $table->string('fragilidade', 255);
+        });
     }
 };

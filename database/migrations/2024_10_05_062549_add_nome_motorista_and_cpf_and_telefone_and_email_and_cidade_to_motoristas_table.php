@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('clientes', function (Blueprint $table) {
-            $table->id();
-            $table->string('nome_cliente', 255);
-            $table->int('cpf', 11);
+        Schema::table('motoristas', function (Blueprint $table) {
+            $table->string('nome_motorista', 255);
+            $table->string('cpf', 11);
             $table->string('telefone', 255);
             $table->string('email', 255);
             $table->string('cidade', 255);
-            $table->timestamps();
         });
     }
 
@@ -27,6 +25,12 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('clientes');
+        Schema::table('motoristas', function (Blueprint $table) {
+            $table->string('nome_motorista', 255);
+            $table->string('cpf', 11);
+            $table->string('telefone', 255);
+            $table->string('email', 255);
+            $table->string('cidade', 255);
+        });
     }
 };

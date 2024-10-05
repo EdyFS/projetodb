@@ -13,7 +13,7 @@ class CargaController extends Controller
     public function index()
     {
         $carga = Carga::all();
-        return view("carga.index", compact('cargas'));
+        return view("carga.index", compact('carga'));
     }
 
     /**
