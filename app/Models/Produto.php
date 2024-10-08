@@ -10,10 +10,10 @@ class Produto extends Model
 {
     use HasFactory;
 
-    protected $fillble = ['cliente_id', 'nome', 'descicao', 'valor'];
+    protected $fillble = ['cliente_id', 'nome', 'descricao', 'valor'];
 
     public function cliente()
     {
-        return $this->belongsTo(Cliente::class)
+        return $this->belongsTo(Cliente::class);
     }
 }
