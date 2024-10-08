@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cliente;
+use GuzzleHttp\Client;
 
 class ClienteController extends Controller
 {
@@ -38,7 +39,8 @@ class ClienteController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $cliente = Cliente ::findOrFail($id);
+        return view("cliente.show", compact('cliente'));
     }
 
     /**
@@ -46,7 +48,8 @@ class ClienteController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $cliente = Cliente ::findOrFail($id);
+        return view("cliente.edit", compact('cliente'));
     }
 
     /**
@@ -54,7 +57,9 @@ class ClienteController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $cliente = Cliente ::findOrFail($id);
+        $cliente->update($request->all());
+        return redirect("/cliente");
     }
 
     /**
@@ -62,6 +67,8 @@ class ClienteController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $cliente = Cliente::findOrFail($id);
+        $cliente->delete();
+        return redirect("/cliente");
     }
 }
