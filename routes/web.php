@@ -4,6 +4,7 @@ use App\Http\Controllers\CargaController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\MotoristaController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProdutoController;
 use App\Models\Motorista;
 use App\Models\Cliente;
 use App\Models\Carga;
@@ -24,6 +25,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('carga', CargaController::class);
     Route::resource('cliente', ClienteController::class);
     Route::resource('motorista', MotoristaController::class);
+    Route::resources('produto', ProdutoController::class);
 });
 
 require __DIR__.'/auth.php';

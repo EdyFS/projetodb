@@ -42,7 +42,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Produtos</a>
+                    <a class="nav-link" href="/produto">Produtos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/cliente">Cliente</a>
