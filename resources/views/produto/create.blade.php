@@ -24,10 +24,10 @@
         </div>
         <div class="row">
             <div class="col">
-                <label for="categoria_id" class="form-label">Categoria:</label>
-                <select name="categoria_id" class="form-select">
-                    @foreach ($categorias as $categoria)
-                        <option value="{{$categoria->id}}">{{$categoria->nome}}</option>
+                <label for="cliente_id" class="form-label">Cliente:</label>
+                <select name="cliente_id" class="form-select">
+                    @foreach ($cliente as $cliente)
+                        <option value="{{$cliente->id}}">{{$cliente->nome}}</option>
                     @endforeach
                 </select>
             </div>

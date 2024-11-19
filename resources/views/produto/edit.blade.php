@@ -25,12 +25,12 @@
         </div>
         <div class="row">
             <div class="col">
-                <label for="categoria_id" class="form-label">Categoria:</label>
-                <select name="categoria_id" class="form-select">
-				    @foreach ($categorias as $categoria)
-                        <option value="{{$categoria->id}}"
-                                {{ $produto->categoria->id == $categoria->id ? 'selected' : '' }}>
-                                {{$categoria->nome}}
+                <label for="cliente_id" class="form-label">Cliente:</label>
+                <select name="cliente_id" class="form-select">
+				    @foreach ($cliente as $cliente)
+                        <option value="{{$cliente->id}}"
+                                {{ $produto->cliente->id == $cliente->id ? 'selected' : '' }}>
+                                {{$cliente->nome}}
                         </option>
                     @endforeach
                 </select>

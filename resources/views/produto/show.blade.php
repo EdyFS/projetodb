@@ -25,8 +25,8 @@
         </div>
         <div class="row">
             <div class="col">
-                <label for="categoria" class="form-label">Categoria:</label>
-                <input type="text" name="categoria" class="form-control" value="{{$produto->categoria->nome}}" disabled/>
+                <label for="cliente" class="form-label">Cliente:</label>
+                <input type="text" name="cliente" class="form-control" value="{{$produto->cliente->nome}}" disabled/>
             </div>
         </div>
         <div class="row mt-3">
