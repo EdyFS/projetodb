@@ -38,7 +38,8 @@ class MotoristaController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $motorista = Motorista ::findOrFail($id);
+        return view("motorista.show", compact('motorista'));
     }
 
     /**
@@ -46,7 +47,8 @@ class MotoristaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $motorista = Motorista ::findOrFail($id);
+        return view("motorista.edit", compact('motorista'));
     }
 
     /**
@@ -54,7 +56,9 @@ class MotoristaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $cliente = Motorista ::findOrFail($id);
+        $cliente->update($request->all());
+        return redirect("/motorista");
     }
 
     /**
@@ -62,6 +66,8 @@ class MotoristaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $motorista = Motorista::findOrFail($id);
+        $motorista->delete();
+        return redirect("/motorista");
     }
 }
