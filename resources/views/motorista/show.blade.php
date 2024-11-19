@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col">
                 <label for="nome" class="form-label">Informe a categoria:</label>
-                <input type="text" name="nome" class="form-control" disabled/>
+                <input type="text" name="nome" class="form-control" value="{{$motorista->nome}}" disabled/>
             </div>
         </div>
         <div class="row">

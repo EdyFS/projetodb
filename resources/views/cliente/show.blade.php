@@ -7,8 +7,8 @@
         @method('DELETE')
         <div class="row">
             <div class="col">
-                <label for="nome" class="form-label">Informe a categoria:</label>
-                <input type="text" name="nome" class="form-control" value="{{$cliente->nome}}"/>
+                <label for="nome" class="form-label">Informe o cliente:</label>
+                <input type="text" name="nome" class="form-control" value="{{$cliente->nome}}" disabled/>
             </div>
         </div>
         <div class="row">
