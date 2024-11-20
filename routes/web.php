@@ -25,7 +25,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('carga', CargaController::class);
     Route::resource('cliente', ClienteController::class);
     Route::resource('motorista', MotoristaController::class);
-    Route::resources('produto', ProdutoController::class);
+    Route::resource('produto', ProdutoController::class);
 });
 
 require __DIR__.'/auth.php';
