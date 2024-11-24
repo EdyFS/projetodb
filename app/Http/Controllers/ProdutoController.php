@@ -59,7 +59,7 @@ class ProdutoController extends Controller
         //Encadear o método WITH CASO tenha relacionamento com mais de uma model
         //Exemplo:
         //$produto = Produto::with('categoria')->with('vendedor')->findOrFail($id);
-        $categorias = Cliente::all();
+        $cliente = Cliente::all();
         return view('produto.edit', compact('produto', 'cliente'));
     }
 

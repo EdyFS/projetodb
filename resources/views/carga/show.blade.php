@@ -31,6 +31,18 @@
         </div>
         <div class="row">
             <div class="col">
+                <label for="cliente" class="form-label">Cliente:</label>
+                <input type="text" name="cliente" class="form-control" value="{{$carga->cliente->nome}}" disabled/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="motorista" class="form-label">Motorista:</label>
+                <input type="text" name="motorista" class="form-control" value="{{$carga->motorista->nome}}" disabled/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
                 <button type="submit" class="btn btn-primary">
                     Salvar
                 </button>

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Carga;
+use App\Models\Cliente;
+use App\Models\Motorista;
 
 class CargaController extends Controller
 {
@@ -12,7 +14,7 @@ class CargaController extends Controller
      */
     public function index()
     {
-        $carga = Carga::all();
+        $carga = Carga::with('cliente')->with('motorista')->get();
         return view("carga.index", compact('carga'));
     }
 
@@ -21,7 +23,9 @@ class CargaController extends Controller
      */
     public function create()
     {
-        return view("carga.create");
+        $cliente = Cliente::all();
+        $motorista = Motorista::all();
+        return view("carga.create", compact('cliente','motorista'));
     }
 
     /**
@@ -38,7 +42,11 @@ class CargaController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $carga = Carga::with('cliente')->with('motorista')->findOrFail($id);
+        //Encadear o método WITH CASO tenha relacionamento com mais de uma model
+        //Exemplo:
+        //$produto = Produto::with('categoria')->with('vendedor')->findOrFail($id);
+        return view('carga.show', compact('carga'));
     }
 
     /**
@@ -46,7 +54,13 @@ class CargaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $carga = Carga::with('cliente')->with('motorista')->findOrFail($id);
+        //Encadear o método WITH CASO tenha relacionamento com mais de uma model
+        //Exemplo:
+        //$produto = Produto::with('categoria')->with('vendedor')->findOrFail($id);
+        $cliente = Cliente::all();
+        $motorista = Motorista::all();
+        return view('produto.edit', compact('produto', 'cliente', 'motorista'));
     }
 
     /**
@@ -54,7 +68,9 @@ class CargaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $carga = Carga::findOrFail($id);
+        $carga->update($request->all());
+        return redirect('/carga');
     }
 
     /**
@@ -62,6 +78,8 @@ class CargaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $carga = Carga::findOrFail($id);
+        $carga->delete();
+        return redirect('/carga');
     }
 }
