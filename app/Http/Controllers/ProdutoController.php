@@ -25,7 +25,7 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        $categorias = Cliente::all();
+        $cliente = Cliente::all();
         return view('produto.create', compact('cliente'));
     }
 

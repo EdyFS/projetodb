@@ -12,7 +12,7 @@
                 <th>Nome</th>
                 <th>Descrição</th>
                 <th>Valor</th>
-                <th>Categoria</th>
+                <th>Cliente</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -22,7 +22,7 @@
                     <td>{{$produto->nome}}</td>
                     <td>{{$produto->descricao}}</td>
                     <td>{{$produto->valor}}</td>
-                    <td>{{$produto->categoria->nome}}</td>
+                    <td>{{$produto->cliente->nome}}</td>
                     <td>
                         <a href='/produto/{{$produto->id}}/edit' class="btn btn-warning">Alterar</a>
                         <a href='/produto/{{$produto->id}}' class='btn btn-danger'>Excluir</a>
