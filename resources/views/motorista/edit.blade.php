@@ -1,8 +1,8 @@
 <x-app-layout>
 
-    <h5>Alterar Categoria</h5>
+    <h5>Alterar Motorista</h5>
 
-    <form action="/categoria/" method="POST">
+    <form action="/motorista/{{$motorista->id}}" method="POST">
         @CSRF
         @method('PUT')
         <div class="row">
@@ -38,13 +38,13 @@
         <div class="row">
             <div class="col">
                 <label for="cnh" class="form-label">Informe o número da CNH:</label>
-                <input type="text" name="cnh" class="form-control"/>
+                <input type="text" name="cnh" class="form-control" value="{{$motorista->cnh}}"/>
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <label for="categoria" class="form-label">Informe a categoria:</label>
-                <input type="text" name="categoria" class="form-control"/>
+                <input type="text" name="categoria" class="form-control" value="{{$motorista->categoria}}"/>
             </div>
         </div>
         <div class="row">
