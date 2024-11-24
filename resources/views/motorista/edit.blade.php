@@ -37,6 +37,18 @@
         </div>
         <div class="row">
             <div class="col">
+                <label for="cnh" class="form-label">Informe o número da CNH:</label>
+                <input type="text" name="cnh" class="form-control"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="categoria" class="form-label">Informe a categoria:</label>
+                <input type="text" name="categoria" class="form-control"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
                 <button type="submit" class="btn btn-primary">
                     Salvar
                 </button>

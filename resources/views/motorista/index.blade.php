@@ -14,6 +14,8 @@
                 <th>Telefone</th>
                 <th>Email</th>
                 <th>Cidade</th>
+                <th>CNH</th>
+                <th>Categoria</th>
                 <th></th>
             </tr>
         </thead>
@@ -25,9 +27,11 @@
                 <td>{{ $c->telefone }}</td>
                 <td>{{ $c->email }}</td>
                 <td>{{ $c->cidade }}</td>
+                <td>{{ $c->cnh }}</td>
+                <td>{{ $c->categoria }}</td>
                 <td>
-                    <a href="/categoria/1/{{ $c->id}}" class="btn btn-warning">Alterar</a>
-                    <a href="/categoria/1/{{ $c->id}}" class="btn btn-danger">Excluir</a>
+                    <a href="/motorista/{{ $c->id}}/edit" class="btn btn-warning">Alterar</a>
+                    <a href="/motorista/{{ $c->id}}" class="btn btn-danger">Excluir</a>
                 </td>
             </tr>
             @endforeach

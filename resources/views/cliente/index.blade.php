@@ -26,8 +26,8 @@
                 <td>{{ $c->email }}</td>
                 <td>{{ $c->cidade }}</td>
                 <td>
-                    <a href="/categoria/1/{{ $c->id}}" class="btn btn-warning">Alterar</a>
-                    <a href="/categoria/1/{{ $c->id}}" class="btn btn-danger">Excluir</a>
+                    <a href="/cliente/{{ $c->id}}/edit" class="btn btn-warning">Alterar</a>
+                    <a href="/cliente/{{ $c->id}}" class="btn btn-danger">Excluir</a>
                 </td>
             </tr>
             @endforeach

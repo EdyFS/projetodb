@@ -24,8 +24,8 @@
                 <td>{{ $c->tamanho }}</td>
                 <td>{{ $c->fragilidade }}</td>
                 <td>
-                    <a href="/categoria/1/{{ $c->id}}" class="btn btn-warning">Alterar</a>
-                    <a href="/categoria/1/{{ $c->id}}" class="btn btn-danger">Excluir</a>
+                    <a href="/carga/{{ $c->id}}/edit" class="btn btn-warning">Alterar</a>
+                    <a href="/carga/{{ $c->id}}" class="btn btn-danger">Excluir</a>
                 </td>
             </tr>
             @endforeach

@@ -1,6 +1,6 @@
 <x-app-layout>
 
-    <h5>Alterar Categoria</h5>
+    <h5>Alterar Cliente</h5>
 
     <form action="/cliente/{{$cliente->id}}" method="POST">
         @CSRF
