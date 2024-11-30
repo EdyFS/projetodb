@@ -2,9 +2,10 @@
 
     <h5>Editar Entrega</h5>
 
-    <form action="/entrega/{{$entrega-id}}" method="POST">
+    <form action="/entrega/{{$entrega->id}}" method="POST">
         @CSRF
         @method('PUT')
+        
         <div class="row">
             <div class="col">
                 <label for="cliente_id" class="form-label">Cliente:</label>
@@ -12,7 +13,7 @@
                     @foreach ($cliente as $cl)
                         <option value="{{$cl->id}}"
                             {{ $entrega->cl->id == $cl->id ? 'selected' : '' }}>
-                            {{$cl->nome}}
+                            {{$cl->nome_cliente}}
                         </option>
                     @endforeach
                 </select>
@@ -23,9 +24,9 @@
                 <label for="motorista_id" class="form-label">Motorista:</label>
                 <select name="motorista_id" class="form-select">
                     @foreach ($motorista as $mo)
-                        <option value="{{$motorista->id}}"
+                        <option value="{{$mo->id}}"
                         {{ $entrega->mo->id == $mo->id ? 'selected' : '' }}>
-                        {{$mo->nome}}
+                        {{$mo->nome_motorista}}
                         </option>
                     @endforeach
                 </select>
@@ -38,7 +39,7 @@
                     @foreach ($carga as $ca)
                         <option value="{{$ca->id}}"
                         {{ $entrega->ca->id == $ca->id ? 'selected' : '' }}>
-                        {{$ca->nome}}
+                        {{$ca->nomeCarga}}
                     </option>
                     @endforeach
                 </select>

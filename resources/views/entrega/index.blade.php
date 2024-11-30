@@ -19,9 +19,9 @@
         <tbody>
             @foreach ($entrega as $entrega)
                 <tr>
-                    <td>{{$entrega->cliente->nome}}</td>
-                    <td>{{$entrega->motorista->nome}}</td>
-                    <td>{{$entrega->carga->nome}}</td>
+                    <td>{{$entrega->cliente->nome_cliente}}</td>
+                    <td>{{$entrega->motorista->nome_motorista}}</td>
+                    <td>{{$entrega->carga->nomeCarga}}</td>
                     <td>{{$entrega->data_entrega}}</td>
                     <td>
                         <a href='/entrega/{{$entrega->id}}/edit' class="btn btn-warning">Alterar</a>

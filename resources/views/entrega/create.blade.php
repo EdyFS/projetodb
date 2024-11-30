@@ -9,7 +9,7 @@
                 <label for="cliente_id" class="form-label">Cliente:</label>
                 <select name="cliente_id" class="form-select">
                     @foreach ($cliente as $cl)
-                        <option value="{{$cl->id}}">{{$cl->nome}}</option>
+                        <option value="{{$cl->id}}">{{$cl->nome_cliente}}</option>
                     @endforeach
                 </select>
             </div>
@@ -19,7 +19,7 @@
                 <label for="motorista_id" class="form-label">Motorista:</label>
                 <select name="motorista_id" class="form-select">
                     @foreach ($motorista as $mo)
-                        <option value="{{$mo->id}}">{{$mo->nome}}</option>
+                        <option value="{{$mo->id}}">{{$mo->nome_motorista}}</option>
                     @endforeach
                 </select>
             </div>
@@ -29,7 +29,7 @@
                 <label for="carga_id" class="form-label">Carga:</label>
                 <select name="carga_id" class="form-select">
                     @foreach ($carga as $ca)
-                        <option value="{{$ca->id}}">{{$ca->nome}}</option>
+                        <option value="{{$ca->id}}">{{$ca->nomeCarga}}</option>
                     @endforeach
                 </select>
             </div>

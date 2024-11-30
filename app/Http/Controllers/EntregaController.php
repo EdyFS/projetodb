@@ -31,7 +31,7 @@ class EntregaController extends Controller
         $cliente = Cliente::all();
         $motorista = Motorista::all();
         $carga = Carga::all();
-        return view('entrega.create', compact(/*'entrega'*/ 'cliente', 'motorista','carga'));
+        return view('entrega.create', compact(/*'entrega',*/ 'cliente', 'motorista','carga'));
     }
 
     /**
@@ -60,7 +60,7 @@ class EntregaController extends Controller
      */
     public function edit(string $id)
     {
-        $produto = Entrega::with('cliente')->with('motorista')->with('carga')->findOrFail($id);
+        $entrega = Entrega::with('cliente')->with('motorista')->with('carga')->findOrFail($id);
         //Encadear o método WITH CASO tenha relacionamento com mais de uma model
         //Exemplo:
         //$produto = Produto::with('categoria')->with('vendedor')->findOrFail($id);
