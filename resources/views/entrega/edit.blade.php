@@ -12,7 +12,7 @@
                 <select name="cliente_id" class="form-select">
                     @foreach ($cliente as $cl)
                         <option value="{{$cl->id}}"
-                            {{ $entrega->cl->id == $cl->id ? 'selected' : '' }}>
+                            {{ $entrega->cliente->id == $cl->id ? 'selected' : '' }}>
                             {{$cl->nome_cliente}}
                         </option>
                     @endforeach
@@ -25,8 +25,8 @@
                 <select name="motorista_id" class="form-select">
                     @foreach ($motorista as $mo)
                         <option value="{{$mo->id}}"
-                        {{ $entrega->mo->id == $mo->id ? 'selected' : '' }}>
-                        {{$mo->nome_motorista}}
+                            {{ $entrega->motorista->id == $mo->id ? 'selected' : '' }}>
+                            {{$mo->nome_motorista}}
                         </option>
                     @endforeach
                 </select>
@@ -38,9 +38,9 @@
                 <select name="carga_id" class="form-select">
                     @foreach ($carga as $ca)
                         <option value="{{$ca->id}}"
-                        {{ $entrega->ca->id == $ca->id ? 'selected' : '' }}>
-                        {{$ca->nomeCarga}}
-                    </option>
+                            {{ $entrega->carga->id == $ca->id ? 'selected' : '' }}>
+                            {{$ca->nomeCarga}}
+                        </option>
                     @endforeach
                 </select>
             </div>
