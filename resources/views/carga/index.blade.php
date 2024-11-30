@@ -13,8 +13,6 @@
                 <th>Peso</th>
                 <th>Tamanho</th>
                 <th>Fragilidade</th>
-                <th>Cliente</th>
-                <th>Motorista</th>
                 <th></th>
             </tr>
         </thead>
@@ -25,8 +23,6 @@
                 <td>{{ $c->peso }}</td>
                 <td>{{ $c->tamanho }}</td>
                 <td>{{ $c->fragilidade }}</td>
-                <td>{{ $c->cliente->nome }}</td>
-                <td>{{ $c->motorista->nome }}</td>
                 <td>
                     <a href="/carga/{{ $c->id}}/edit" class="btn btn-warning">Alterar</a>
                     <a href="/carga/{{ $c->id}}" class="btn btn-danger">Excluir</a>

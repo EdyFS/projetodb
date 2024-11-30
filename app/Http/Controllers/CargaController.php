@@ -14,7 +14,7 @@ class CargaController extends Controller
      */
     public function index()
     {
-        $carga = Carga::with('cliente')->with('motorista')->get();
+        $carga = Carga::all();
         return view("carga.index", compact('carga'));
     }
 
@@ -23,9 +23,7 @@ class CargaController extends Controller
      */
     public function create()
     {
-        $cliente = Cliente::all();
-        $motorista = Motorista::all();
-        return view("carga.create", compact('cliente','motorista'));
+        return view("carga.create");
     }
 
     /**
@@ -42,10 +40,7 @@ class CargaController extends Controller
      */
     public function show(string $id)
     {
-        $carga = Carga::with('cliente')->with('motorista')->findOrFail($id);
-        //Encadear o método WITH CASO tenha relacionamento com mais de uma model
-        //Exemplo:
-        //$produto = Produto::with('categoria')->with('vendedor')->findOrFail($id);
+        $carga = Carga::findOrFail($id);
         return view('carga.show', compact('carga'));
     }
 
@@ -54,13 +49,8 @@ class CargaController extends Controller
      */
     public function edit(string $id)
     {
-        $carga = Carga::with('cliente')->with('motorista')->findOrFail($id);
-        //Encadear o método WITH CASO tenha relacionamento com mais de uma model
-        //Exemplo:
-        //$produto = Produto::with('categoria')->with('vendedor')->findOrFail($id);
-        $cliente = Cliente::all();
-        $motorista = Motorista::all();
-        return view('produto.edit', compact('produto', 'cliente', 'motorista'));
+        $carga = Carga::findOrFail($id);
+        return view('carga.edit', compact('carga'));
     }
 
     /**

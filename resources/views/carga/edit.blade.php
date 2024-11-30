@@ -26,35 +26,9 @@
         <div class="row">
             <div class="col">
                 <label for="fragilidade" class="form-label">Informe a fragilidade:</label>
-                <input type="text" name="fragilidade" class="form-control" value="{{$carga->fragoilidade}"/>
+                <input type="text" name="fragilidade" class="form-control" value="{{$carga->fragilidade}}"/>
             </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <label for="cliente_id" class="form-label">Cliente:</label>
-                <select name="cliente_id" class="form-select">
-				    @foreach ($cliente as $cliente)
-                        <option value="{{$cliente->id}}"
-                                {{ $carga->cliente->id == $cliente->id ? 'selected' : '' }}>
-                                {{$cliente->nome}}
-                        </option>
-                    @endforeach
-                </select>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <label for="motorista_id" class="form-label">Motorista:</label>
-                <select name="motorista_id" class="form-select">
-				    @foreach ($motorista as $motorista)
-                        <option value="{{$motorista->id}}"
-                                {{ $carga->motorista->id == $motorista->id ? 'selected' : '' }}>
-                                {{$motorista->nome}}
-                        </option>
-                    @endforeach
-                </select>
-            </div>
-        </div>
+        </div>       
         <div class="row">
             <div class="col">
                 <button type="submit" class="btn btn-primary">

@@ -53,6 +53,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/carga">Carga</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/carga">Entregas</a>
+                </li>
             </ul>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
