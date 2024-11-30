@@ -12,7 +12,7 @@ class Entrega extends Model
 {
     use HasFactory;
 
-    protected $fillble = ['cliente_id', 'motorista_id', 'carga_id', 'data_entrega'];
+    protected $fillable = ['cliente_id', 'motorista_id', 'carga_id', 'data_entrega'];
 
     public function cliente()
     {

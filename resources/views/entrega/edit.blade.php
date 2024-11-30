@@ -2,17 +2,17 @@
 
     <h5>Editar Entrega</h5>
 
-    <form action="/entrega" method="POST">
+    <form action="/entrega/{{$entrega-id}}" method="POST">
         @CSRF
         @method('PUT')
         <div class="row">
             <div class="col">
                 <label for="cliente_id" class="form-label">Cliente:</label>
                 <select name="cliente_id" class="form-select">
-                    @foreach ($cliente as $cliente)
-                        <option value="{{$cliente->id}}"
-                            {{ $entrega->cliente->id == $cliente->id ? 'selected' : '' }}>
-                            {{$cliente->nome}}
+                    @foreach ($cliente as $cl)
+                        <option value="{{$cl->id}}"
+                            {{ $entrega->cl->id == $cl->id ? 'selected' : '' }}>
+                            {{$cl->nome}}
                         </option>
                     @endforeach
                 </select>
@@ -22,10 +22,10 @@
             <div class="col">
                 <label for="motorista_id" class="form-label">Motorista:</label>
                 <select name="motorista_id" class="form-select">
-                    @foreach ($motorista as $motorista)
+                    @foreach ($motorista as $mo)
                         <option value="{{$motorista->id}}"
-                        {{ $entrega->motorista->id == $motorista->id ? 'selected' : '' }}>
-                        {{$motorista->nome}}
+                        {{ $entrega->mo->id == $mo->id ? 'selected' : '' }}>
+                        {{$mo->nome}}
                         </option>
                     @endforeach
                 </select>
@@ -35,10 +35,10 @@
             <div class="col">
                 <label for="carga_id" class="form-label">Carga:</label>
                 <select name="carga_id" class="form-select">
-                    @foreach ($carga as $carga)
-                        <option value="{{$carga->id}}"
-                        {{ $entrega->carga->id == $carga->id ? 'selected' : '' }}>
-                        {{$carga->nome}}
+                    @foreach ($carga as $ca)
+                        <option value="{{$ca->id}}"
+                        {{ $entrega->ca->id == $ca->id ? 'selected' : '' }}>
+                        {{$ca->nome}}
                     </option>
                     @endforeach
                 </select>

@@ -2,7 +2,7 @@
 
     <h5>Editar Entrega</h5>
 
-    <form action="/entrega" method="POST">
+    <form action="/entrega/{{$entrega->id}}" method="POST">
         @CSRF
         @method('DELETE')
         <div class="row">

@@ -26,8 +26,8 @@
             <div class="col">
                 <label for="cliente_id" class="form-label">Cliente:</label>
                 <select name="cliente_id" class="form-select">
-                    @foreach ($cliente as $cliente)
-                        <option value="{{$cliente->id}}">{{$cliente->nome}}</option>
+                    @foreach ($cliente as $cl)
+                        <option value="{{$cl->id}}">{{$cl->nome}}</option>
                     @endforeach
                 </select>
             </div>

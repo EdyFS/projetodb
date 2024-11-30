@@ -19,13 +19,13 @@
         <tbody>
             @foreach ($entrega as $entrega)
                 <tr>
-                    <td>{{$entrega->cliente-nome}}</td>
-                    <td>{{$entrega->motorista-nome}}</td>
-                    <td>{{$entrega->carga-nome}}</td>
+                    <td>{{$entrega->cliente->nome}}</td>
+                    <td>{{$entrega->motorista->nome}}</td>
+                    <td>{{$entrega->carga->nome}}</td>
                     <td>{{$entrega->data_entrega}}</td>
                     <td>
-                        <a href='/produto/{{$produto->id}}/edit' class="btn btn-warning">Alterar</a>
-                        <a href='/produto/{{$produto->id}}' class='btn btn-danger'>Excluir</a>
+                        <a href='/entrega/{{$entrega->id}}/edit' class="btn btn-warning">Alterar</a>
+                        <a href='/entrega/{{$entrega->id}}' class='btn btn-danger'>Excluir</a>
                     </td>
                 </tr>
             @endforeach

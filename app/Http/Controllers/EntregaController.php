@@ -19,7 +19,7 @@ class EntregaController extends Controller
         //Encadear o método WITH CASO tenha relacionamento com mais de uma model
         //Exemplo:
         //$produto = Produto::with('categoria')->with('vendedor')->get();
-        return view('entrega.index', compact('entregas'));
+        return view('entrega.index', compact('entrega'));
     }
 
     /**
@@ -27,8 +27,11 @@ class EntregaController extends Controller
      */
     public function create()
     {
-        $entrega = Entrega::all();
-        return view('produto.create', compact('entrega'));
+        //$entrega = Entrega::all();
+        $cliente = Cliente::all();
+        $motorista = Motorista::all();
+        $carga = Carga::all();
+        return view('entrega.create', compact(/*'entrega'*/ 'cliente', 'motorista','carga'));
     }
 
     /**

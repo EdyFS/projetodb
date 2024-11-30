@@ -17,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($produtos as $produto)
+            @foreach ($produto as $produto)
                 <tr>
                     <td>{{$produto->nome}}</td>
                     <td>{{$produto->descricao}}</td>

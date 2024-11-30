@@ -11,7 +11,7 @@ class Produto extends Model
 {
     use HasFactory;
 
-    protected $fillble = ['cliente_id', 'nome', 'descricao', 'valor'];
+    protected $fillable = ['cliente_id', 'nome', 'descricao', 'valor'];
 
     public function cliente()
     {

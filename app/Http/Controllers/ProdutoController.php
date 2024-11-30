@@ -13,11 +13,11 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        $produtos = Produto::with('cliente')->get();
+        $produto = Produto::with('cliente')->get();
         //Encadear o método WITH CASO tenha relacionamento com mais de uma model
         //Exemplo:
         //$produto = Produto::with('categoria')->with('vendedor')->get();
-        return view('produto.index', compact('produtos'));
+        return view('produto.index', compact('produto'));
     }
 
     /**
@@ -25,7 +25,7 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        $produto = Cliente::all();
+        $cliente = Cliente::all();
         return view('produto.create', compact('cliente'));
     }
 

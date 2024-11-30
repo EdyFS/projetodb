@@ -8,8 +8,8 @@
             <div class="col">
                 <label for="cliente_id" class="form-label">Cliente:</label>
                 <select name="cliente_id" class="form-select">
-                    @foreach ($cliente as $cliente)
-                        <option value="{{$cliente->id}}">{{$cliente->nome}}</option>
+                    @foreach ($cliente as $cl)
+                        <option value="{{$cl->id}}">{{$cl->nome}}</option>
                     @endforeach
                 </select>
             </div>
@@ -18,8 +18,8 @@
             <div class="col">
                 <label for="motorista_id" class="form-label">Motorista:</label>
                 <select name="motorista_id" class="form-select">
-                    @foreach ($motorista as $motorista)
-                        <option value="{{$motorista->id}}">{{$motorista->nome}}</option>
+                    @foreach ($motorista as $mo)
+                        <option value="{{$mo->id}}">{{$mo->nome}}</option>
                     @endforeach
                 </select>
             </div>
@@ -28,8 +28,8 @@
             <div class="col">
                 <label for="carga_id" class="form-label">Carga:</label>
                 <select name="carga_id" class="form-select">
-                    @foreach ($carga as $carga)
-                        <option value="{{$carga->id}}">{{$carga->nome}}</option>
+                    @foreach ($carga as $ca)
+                        <option value="{{$ca->id}}">{{$ca->nome}}</option>
                     @endforeach
                 </select>
             </div>
