@@ -6,23 +6,41 @@
         @CSRF
         <div class="row">
             <div class="col">
-                <label for="nome_cliente" class="form-label">Informe o Cliente:</label>
-                <input type="text" name="nome_cliente" class="form-control"/>
+                <label for="cliente_id" class="form-label">Cliente:</label>
+                <select name="cliente_id" class="form-select">
+                    @foreach ($cliente as $cliente)
+                        <option value="{{$cliente->id}}">{{$cliente->nome}}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <label for="cpf" class="form-label">Informe o Motorias:</label>
-                <input type="number" name="cpf" class="form-control"/>
+                <label for="motorista_id" class="form-label">Motorista:</label>
+                <select name="motorista_id" class="form-select">
+                    @foreach ($motorista as $motorista)
+                        <option value="{{$motorista->id}}">{{$motorista->nome}}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <label for="telefone" class="form-label">Informe a Carga:</label>
-                <input type="text" name="telefone" class="form-control"/>
+                <label for="carga_id" class="form-label">Carga:</label>
+                <select name="carga_id" class="form-select">
+                    @foreach ($carga as $carga)
+                        <option value="{{$carga->id}}">{{$carga->nome}}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
         <div class="row">
+            <div class="col">
+                <label for="data_entrega" class="form-label">Data de Entrega:</label>
+                <input type="date" name="data_entrega" class="form-control"/>
+            </div>
+        </div>
+        <div class="row mt-3">
             <div class="col">
                 <button type="submit" class="btn btn-primary">
                     Salvar
