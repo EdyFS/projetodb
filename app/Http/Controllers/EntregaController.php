@@ -3,21 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Produto;
+use App\Models\Entrega;
 use App\Models\Cliente;
+use App\Models\Motorista;
+use App\Models\Carga;
 
-class ProdutoController extends Controller
+class EntregaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $produtos = Produto::with('cliente')->get();
+        $entrega = Entrega::with('cliente')->with('motorista')->with('carga')->get();
         //Encadear o método WITH CASO tenha relacionamento com mais de uma model
         //Exemplo:
         //$produto = Produto::with('categoria')->with('vendedor')->get();
-        return view('produto.index', compact('produtos'));
+        return view('entrega.index', compact('entregas'));
     }
 
     /**
@@ -25,8 +27,8 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        $produto = Cliente::all();
-        return view('produto.create', compact('cliente'));
+        $entrega = Entrega::all();
+        return view('produto.create', compact('entrega'));
     }
 
     /**
@@ -34,8 +36,8 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
-        Produto::create($request->all());
-        return redirect('/produto');
+        Entrega::create($request->all());
+        return redirect('/entrega');
     }
 
     /**
@@ -43,11 +45,11 @@ class ProdutoController extends Controller
      */
     public function show(string $id)
     {
-        $produto = Produto::with('cliente')->findOrFail($id);
+        $entrega = Entrega::with('cliente')->with('motorista')->with('carga')->findOrFail($id);
         //Encadear o método WITH CASO tenha relacionamento com mais de uma model
         //Exemplo:
         //$produto = Produto::with('categoria')->with('vendedor')->findOrFail($id);
-        return view('produto.show', compact('produto'));
+        return view('entrega.show', compact('entrega'));
     }
 
     /**
@@ -55,12 +57,14 @@ class ProdutoController extends Controller
      */
     public function edit(string $id)
     {
-        $produto = Produto::with('cliente')->findOrFail($id);
+        $produto = Entrega::with('cliente')->with('motorista')->with('carga')->findOrFail($id);
         //Encadear o método WITH CASO tenha relacionamento com mais de uma model
         //Exemplo:
         //$produto = Produto::with('categoria')->with('vendedor')->findOrFail($id);
         $cliente = Cliente::all();
-        return view('produto.edit', compact('produto', 'cliente'));
+        $motorista = Motorista::all();
+        $carga = Carga::all();
+        return view('entrega.edit', compact('entrega', 'cliente', 'motorista', 'carga'));
     }
 
     /**
@@ -68,9 +72,9 @@ class ProdutoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $produto = Produto::findOrFail($id);
-        $produto->update($request->all());
-        return redirect('/produto');
+        $entrega = Entrega::findOrFail($id);
+        $entrega->update($request->all());
+        return redirect('/entrega');
     }
 
     /**
@@ -78,8 +82,8 @@ class ProdutoController extends Controller
      */
     public function destroy(string $id)
     {
-        $produto = Produto::findOrFail($id);
-        $produto->delete();
-        return redirect('/produto');
+        $entrega = Entrega::findOrFail($id);
+        $entrega->delete();
+        return redirect('/entrega');
     }
 }
